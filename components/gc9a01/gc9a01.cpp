@@ -173,6 +173,12 @@ void GC9A01::dump_config() {
   LOG_UPDATE_INTERVAL(this);
 }
 
+void GC9A01::sleep() {
+  this->dc_pin_->digital_write(false);
+  this->write_byte(GC9A01_SLPIN);
+  this->dc_pin_->digital_write(true);
+}
+
 void HOT GC9A01::writecommand_(uint8_t value) {
   this->enable();
   this->dc_pin_->digital_write(false);
