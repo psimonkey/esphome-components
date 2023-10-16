@@ -174,6 +174,7 @@ void GC9A01::dump_config() {
 }
 
 void GC9A01::sleep() {
+  ESP_LOGI(TAG, "In sleep function.");
   this->dc_pin_->digital_write(false);
   this->write_byte(GC9A01_SLPIN);
   this->dc_pin_->digital_write(true);
