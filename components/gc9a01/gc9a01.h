@@ -16,6 +16,8 @@ class GC9A01 : public PollingComponent,
   void dump_config() override;
   void setup() override;
 
+  void sleep();
+
   void display();
 
   void update() override;
